@@ -19,13 +19,14 @@
 #define M1_CURR_PIN A2
 
 // Task periodicity
-#define READ_PERIOD 10
-#define UPDATE_PID 100
-#define REPORT_PERIOD 2000
+#define READ_PERIOD 2
+#define UPDATE_PID 10
+#define REPORT_PERIOD 500
 
 // PID params
-#define KP 4
-#define KI 0.0
+#define KP 0.5
+// TODO Integral part depends on frequency if PID calls, hence I'd better include dt into PID calculate
+#define KI 0.01 
 #define KD 0.0
 
 #define DEBUG_PID
@@ -36,7 +37,7 @@ MPotReader positionReader(POS_PIN, READ_PERIOD);
 
 MDcMotor motor(M1_PIN1, M1_PIN2, M1_PWM_PIN);
 
-MPid pid(KP, KI, KD, 1024);
+MPid pid(KP, KI, KD, 4096);
 
 MServoController controller(UPDATE_PID, &motor, &pid, &angleReader, &positionReader);
 

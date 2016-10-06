@@ -20,6 +20,9 @@ float MPid::calculate(float desired, float actual)
 	float error = desired - actual;
 	
 	acc += error;
+	//Serial.println(error);
+	//Serial.println(acc);
+	//Serial.println("---------------");
 	
 	float p_term = p * error;
 	float i_term = i * constrain(acc, -max_acc, max_acc); 

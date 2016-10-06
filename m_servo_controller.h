@@ -15,6 +15,9 @@
 	#include "WProgram.h"
 #endif
 
+#define ACCURACY 10
+#define MIN_PWM 15 
+
 class MServoController: public MTask {
 private:
 	MDcMotor* motor;
@@ -57,29 +60,29 @@ protected:
 		actualAngle = actualAngleInAdcValue;  // actualSmoother.smooth(actualAngleInAdcValue);
 		
 		signed int delta = (signed int)desiredAngle - (signed int)actualAngle;
-		//Serial.println(delta);
-		if ((delta < 20) && (delta > -20)) {
-			//Serial.println("1");
+		if ((delta < ACCURACY) && (delta > -ACCURACY)) {
 			lastPid = 0;
 			lastPidAdj = 0;
 			pwmSpeed = 0;
 			motor->setSpeed(0);
 
 		} else {
-			//Serial.println("2");
 			lastPid = pid->calculate(desiredAngle, actualAngle); // some value to be converted to PWM
 
-			if (lastPid < 0) {
-				motor->reardrive();
+			// direction when pid is less or greater than 0 is determined by wiring of the motor
+			if (lastPid < 0) {	
+				motor->forward();
 				lastPidAdj = -lastPid;
 			} else {
-				motor->forward();
+				motor->reardrive();
 				lastPidAdj = lastPid;
 			}
 		
 			lastPidAdj = constrain(lastPidAdj, 0, 1023);
 		
 			pwmSpeed = lastPidAdj/4.0;
+			
+			if (pwmSpeed < MIN_PWM) pwmSpeed = 0;
 			motor->setSpeed(pwmSpeed);
 			
 		}
