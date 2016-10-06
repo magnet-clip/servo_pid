@@ -67,7 +67,7 @@ protected:
 			motor->setSpeed(0);
 
 		} else {
-			lastPid = pid->calculate(desiredAngle, actualAngle); // some value to be converted to PWM
+			lastPid = pid->calculate((float)desiredAngle, (float)actualAngle); // some value to be converted to PWM
 
 			// direction when pid is less or greater than 0 is determined by wiring of the motor
 			if (lastPid < 0) {	

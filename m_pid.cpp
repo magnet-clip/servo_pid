@@ -12,7 +12,7 @@
 	this->max_acc = max_acc;
 	
 	acc = 0.0;
-	err = 0.0;
+	lastError = 0.0;
 }
 
 float MPid::calculate(float desired, float actual)
@@ -26,9 +26,9 @@ float MPid::calculate(float desired, float actual)
 	
 	float p_term = p * error;
 	float i_term = i * constrain(acc, -max_acc, max_acc); 
-	float d_term = d * (error - err);
+	float d_term = d * (error - lastError);
 	
-	err = error;
+	lastError = error;
 	
 	float pid = p_term + i_term + d_term;
 	return pid;

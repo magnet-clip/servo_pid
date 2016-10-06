@@ -24,10 +24,10 @@
 #define REPORT_PERIOD 500
 
 // PID params
-#define KP 0.5
+#define KP 1
 // TODO Integral part depends on frequency if PID calls, hence I'd better include dt into PID calculate
 #define KI 0.01 
-#define KD 0.0
+#define KD 0.25
 
 #define DEBUG_PID
 #define DEBUG_ROTATION
