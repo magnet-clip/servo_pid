@@ -1,3 +1,4 @@
+#include "no_smoother.h"
 #include "m_servo_controller.h"
 #include "m_reporter.h"
 #include "m_ewma.h"
@@ -22,6 +23,9 @@
 #define READ_PERIOD 2
 #define UPDATE_PID 10
 #define REPORT_PERIOD 500
+
+// TODO coefficients for PID for forward / reverse speed because motor rotates in one direction faster than in another
+// TODO Think of replacing EWMA for reading ADC with something more robust. For example simple average. Or no averaging at all
 
 // PID params
 #define KP 1

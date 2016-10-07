@@ -255,6 +255,12 @@
     <Compile Include="m_task.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="no_smoother.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="no_smoother.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="__vm\.ServoPid.vsarduino.h">
       <SubType>compile</SubType>
     </Compile>

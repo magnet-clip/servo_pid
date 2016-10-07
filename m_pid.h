@@ -13,7 +13,7 @@ class MPid {
 	private:
 		float p, i, d; // coefficient
 		float acc;		// accumulated error
-		float err;		// last error
+		float lastError;		// last error
 		
 		float max_acc;
 

@@ -5,6 +5,7 @@
 #include "m_pid.h"
 #include "m_pot_reader.h"
 #include "m_ewma.h"
+#include "no_smoother.h"
 
 #ifndef _M_SERVO_CONTROLLER_h
 #define _M_SERVO_CONTROLLER_h
@@ -15,7 +16,11 @@
 	#include "WProgram.h"
 #endif
 
+// difference between desired and actual position in ADC points when they are considered equal
 #define ACCURACY 10
+
+// minimum level of PWM when motor continues to turn (when PWM is less friction does not let it turn)
+// this value is calibrated for 19 volts input voltage
 #define MIN_PWM 15 
 
 class MServoController: public MTask {
@@ -25,10 +30,9 @@ private:
 	MPotReader* desiredReader;
 	MPotReader* actualReader;
 	
-	MEwma<10> desiredSmoother;
-	MEwma<10> actualSmoother;
+	NoSmooter desiredSmoother;
+	NoSmooter actualSmoother;
 
-	
 	float desiredAngle, actualAngle;
 	float lastPid, lastPidAdj;
 	int pwmSpeed;
