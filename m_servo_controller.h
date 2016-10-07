@@ -23,6 +23,10 @@
 // this value is calibrated for 19 volts input voltage
 #define MIN_PWM 15 
 
+
+#define FWD_COEFF 0.4
+#define RWD_COEFF 2
+
 class MServoController: public MTask {
 private:
 	MDcMotor* motor;
@@ -77,10 +81,12 @@ protected:
 			if (lastPid < 0) {	
 				motor->forward();
 				lastPidAdj = -lastPid;
+				lastPidAdj *= FWD_COEFF;
 			} else {
 				motor->reardrive();
 				lastPidAdj = lastPid;
-			}
+				lastPidAdj *= RWD_COEFF;
+				}
 		
 			lastPidAdj = constrain(lastPidAdj, 0, 1023);
 		
