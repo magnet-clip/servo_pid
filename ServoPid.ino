@@ -33,6 +33,8 @@
 #define KI 0.01 
 #define KD 0.25
 
+ #define MAX_I 16384
+
 #define DEBUG_PID
 #define DEBUG_ROTATION
 
@@ -41,7 +43,7 @@ MPotReader positionReader(POS_PIN, READ_PERIOD);
 
 MDcMotor motor(M1_PIN1, M1_PIN2, M1_PWM_PIN);
 
-MPid pid(KP, KI, KD, 4096);
+MPid pid(KP, KI, KD, MAX_I);
 
 MServoController controller(UPDATE_PID, &motor, &pid, &angleReader, &positionReader);
 

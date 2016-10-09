@@ -71,6 +71,8 @@
       <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries</Value>
       <Value>C:/Users/u0161529/Documents/Arduino/libraries</Value>
       <Value>../../../ServoPid</Value>
+      <Value>D:/Program Files (x86)/Atmel/Studio/7.0/Extensions/azd2qah4.lfv/Micro Platforms/default/debuggers/VM_DBG</Value>
+      <Value>D:/Program Files (x86)/Atmel/Studio/7.0/Extensions/azd2qah4.lfv/Micro Platforms/default/debuggers</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr//avr/include/avr/</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include</Value>
@@ -104,6 +106,8 @@
       <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries</Value>
       <Value>C:/Users/u0161529/Documents/Arduino/libraries</Value>
       <Value>../../../ServoPid</Value>
+      <Value>D:/Program Files (x86)/Atmel/Studio/7.0/Extensions/azd2qah4.lfv/Micro Platforms/default/debuggers/VM_DBG</Value>
+      <Value>D:/Program Files (x86)/Atmel/Studio/7.0/Extensions/azd2qah4.lfv/Micro Platforms/default/debuggers</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr//avr/include/avr/</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include</Value>
@@ -118,6 +122,11 @@
 </AvrGccCpp>
     </ToolchainSettings>
     <VMSETTING_IncludePaths>C:/Program Files (x86)/Arduino/libraries;C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries;C:/Users/u0161529/Documents/Arduino/libraries;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino;C:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/standard;../../../ServoPid;C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/;C:/Program Files (x86)/Arduino/hardware/tools/avr//avr/include/avr/;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include;D:/Program Files (x86)/Atmel/Studio/7.0/Extensions/azd2qah4.lfv/Micro Platforms/default/debuggers/VM_DBG;D:/Program Files (x86)/Atmel/Studio/7.0/Extensions/azd2qah4.lfv/Micro Platforms/default/debuggers;</VMSETTING_IncludePaths>
+    <VisualMicroSettings>
+      <VisualMicroSettings xmlns="">
+        <arduino.upload.port>COM7</arduino.upload.port>
+      </VisualMicroSettings>
+    </VisualMicroSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
@@ -150,6 +159,8 @@
       <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries</Value>
       <Value>C:/Users/u0161529/Documents/Arduino/libraries</Value>
       <Value>../../../ServoPid</Value>
+      <Value>D:/Program Files (x86)/Atmel/Studio/7.0/Extensions/azd2qah4.lfv/Micro Platforms/default/debuggers/VM_DBG</Value>
+      <Value>D:/Program Files (x86)/Atmel/Studio/7.0/Extensions/azd2qah4.lfv/Micro Platforms/default/debuggers</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr//avr/include/avr/</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include</Value>
@@ -183,6 +194,8 @@
       <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries</Value>
       <Value>C:/Users/u0161529/Documents/Arduino/libraries</Value>
       <Value>../../../ServoPid</Value>
+      <Value>D:/Program Files (x86)/Atmel/Studio/7.0/Extensions/azd2qah4.lfv/Micro Platforms/default/debuggers/VM_DBG</Value>
+      <Value>D:/Program Files (x86)/Atmel/Studio/7.0/Extensions/azd2qah4.lfv/Micro Platforms/default/debuggers</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr//avr/include/avr/</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include</Value>
@@ -197,6 +210,11 @@
 </AvrGccCpp>
     </ToolchainSettings>
     <VMSETTING_IncludePaths>C:/Program Files (x86)/Arduino/libraries;C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries;C:/Users/u0161529/Documents/Arduino/libraries;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino;C:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/standard;../../../ServoPid;C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/;C:/Program Files (x86)/Arduino/hardware/tools/avr//avr/include/avr/;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include;D:/Program Files (x86)/Atmel/Studio/7.0/Extensions/azd2qah4.lfv/Micro Platforms/default/debuggers/VM_DBG;D:/Program Files (x86)/Atmel/Studio/7.0/Extensions/azd2qah4.lfv/Micro Platforms/default/debuggers;</VMSETTING_IncludePaths>
+    <VisualMicroSettings>
+      <VisualMicroSettings xmlns="">
+        <arduino.upload.port>COM7</arduino.upload.port>
+      </VisualMicroSettings>
+    </VisualMicroSettings>
   </PropertyGroup>
   <ItemGroup>
     <None Include="ServoPid.ino">

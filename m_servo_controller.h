@@ -17,15 +17,18 @@
 #endif
 
 // difference between desired and actual position in ADC points when they are considered equal
-#define ACCURACY 10
+#define ACCURACY 20
 
 // minimum level of PWM when motor continues to turn (when PWM is less friction does not let it turn)
 // this value is calibrated for 19 volts input voltage
-#define MIN_PWM 15 
+#define MIN_PWM 10
 
 
 #define FWD_COEFF 0.4
 #define RWD_COEFF 2
+
+#define MIN_DESIRED 60
+#define MAX_DESIRED 940
 
 class MServoController: public MTask {
 private:
@@ -63,6 +66,7 @@ protected:
 	void update(unsigned long dt) {
 		unsigned int desiredAngleInAdcValue = desiredReader->get();
 		desiredAngle = desiredAngleInAdcValue; //desiredSmoother.smooth(desiredAngleInAdcValue);
+		desiredAngle = map(desiredAngleInAdcValue, 0, 1023, MIN_DESIRED, MAX_DESIRED);
 
 		unsigned int actualAngleInAdcValue = actualReader->get();
 		actualAngle = actualAngleInAdcValue;  // actualSmoother.smooth(actualAngleInAdcValue);
@@ -86,7 +90,7 @@ protected:
 				motor->reardrive();
 				lastPidAdj = lastPid;
 				lastPidAdj *= RWD_COEFF;
-				}
+			}
 		
 			lastPidAdj = constrain(lastPidAdj, 0, 1023);
 		
