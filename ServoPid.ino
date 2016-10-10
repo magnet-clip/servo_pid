@@ -1,3 +1,4 @@
+#include "m_settings.h"
 #include "no_smoother.h"
 #include "m_servo_controller.h"
 #include "m_reporter.h"
@@ -19,36 +20,16 @@
 
 #define M1_CURR_PIN A2
 
-// Task periodicity
-#define READ_PERIOD 2
-#define UPDATE_PID 10
-#define REPORT_PERIOD 500
-
-// TODO coefficients for PID for forward / reverse speed because motor rotates in one direction faster than in another
-// TODO Think of replacing EWMA for reading ADC with something more robust. For example simple average. Or no averaging at all
-
-// PID params
-#define KP 1
-// TODO Integral part depends on frequency if PID calls, hence I'd better include dt into PID calculation
-#define KI 0.01 
-#define KD 0.25
-
- #define MAX_I 16384
 
 #define DEBUG_PID
 #define DEBUG_ROTATION
 
 MPotReader angleReader(ANGLE_PIN, READ_PERIOD);
 MPotReader positionReader(POS_PIN, READ_PERIOD);
-
 MDcMotor motor(M1_PIN1, M1_PIN2, M1_PWM_PIN);
-
 MPid pid(KP, KI, KD, MAX_I);
-
 MServoController controller(UPDATE_PID, &motor, &pid, &angleReader, &positionReader);
-
 MReporter reporter(REPORT_PERIOD, &controller);
-
 
 void setup() {
 	angleReader.init();
