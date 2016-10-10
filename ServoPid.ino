@@ -29,7 +29,7 @@
 
 // PID params
 #define KP 1
-// TODO Integral part depends on frequency if PID calls, hence I'd better include dt into PID calculate
+// TODO Integral part depends on frequency if PID calls, hence I'd better include dt into PID calculation
 #define KI 0.01 
 #define KD 0.25
 
