@@ -261,6 +261,12 @@
     <Compile Include="m_servo_controller.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="m_settings.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="m_settings.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="m_smoother.cpp">
       <SubType>compile</SubType>
     </Compile>
