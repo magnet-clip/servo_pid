@@ -32,7 +32,6 @@ private:
 	int pwmSpeed;
 		
 public:
-	//(UPDATE_PID, MAX_RPM, &motor, &pid, &angleReader, &positionReader);
 	MServoController(unsigned long period, MDcMotor* motor, MPid* pid, MPotReader* desiredAngleReader, MPotReader* actualAngleReader) : MTask(period) {
 		this->motor = motor;
 		this->pid = pid;
@@ -60,11 +59,11 @@ protected:
 		
 		signed int delta = (signed int)desiredAngle - (signed int)actualAngle;
 		if ((delta < ACCURACY) && (delta > -ACCURACY)) {
+			// we are in acceptable interval
 			lastPid = 0;
 			lastPidAdj = 0;
 			pwmSpeed = 0;
 			motor->setSpeed(0);
-
 		} else {
 			lastPid = pid->calculate((float)desiredAngle, (float)actualAngle); // some value to be converted to PWM
 
@@ -81,13 +80,11 @@ protected:
 		
 			lastPidAdj = constrain(lastPidAdj, 0, 1023);
 		
-			pwmSpeed = lastPidAdj/4.0;
+			pwmSpeed = lastPidAdj/4.0; // simpler version of map(lastPidAdj, 0, 1023, 0, 255)
 			
 			if (pwmSpeed < MIN_PWM) pwmSpeed = 0;
 			motor->setSpeed(pwmSpeed);
-			
 		}
-		
 	}
 };
 
